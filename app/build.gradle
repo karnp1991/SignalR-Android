@@ -30,10 +30,19 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //    compile(name: 'signalr-client-sdk-android-release', ext: 'aar')
     compile 'com.google.code.gson:gson:2.4'
-    compile project(':signalr-client-sdk-android-release')
+    compile(name: 'signalr-client-sdk-android-release', ext: 'aar')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
