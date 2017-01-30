@@ -1,0 +1,4 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('signalr-client-sdk-android-release.aar'))
+dependencies {
+}
